@@ -48,7 +48,7 @@
 <meta itemprop="name" content="Go 新特性 -- 泛型">
 <meta itemprop="description" content="序言 2022年3月15日，争议非常大但同时也备受期待的泛型终于伴随着 Go 1.18 发布了。设计者之前还说为了 Go 语言的简洁，不会加入泛型🙄 为什么要引入泛"><meta itemprop="datePublished" content="2023-01-23T19:50:59+08:00" />
 <meta itemprop="dateModified" content="2023-01-23T19:50:59+08:00" />
-<meta itemprop="wordCount" content="7669">
+<meta itemprop="wordCount" content="7690">
 <meta itemprop="keywords" content="Go,Generic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Go 新特性 -- 泛型"/>
 <meta name="twitter:description" content="序言 2022年3月15日，争议非常大但同时也备受期待的泛型终于伴随着 Go 1.18 发布了。设计者之前还说为了 Go 语言的简洁，不会加入泛型🙄 为什么要引入泛"/>
@@ -137,7 +137,7 @@
             <a href="/categories/programming/"> Programming </a>
             <a href="/categories/notes/"> “Notes&#34; </a>
             </div>
-          <span class="more-meta"> 约 7669 字 </span>
+          <span class="more-meta"> 约 7690 字 </span>
           <span class="more-meta"> 预计阅读 16 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -189,6 +189,7 @@
           </ul>
         </li>
         <li><a href="#总结">总结</a></li>
+        <li><a href="#参考">参考</a></li>
       </ul>
     </li>
   </ul>
@@ -765,7 +766,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nx">fn2</span> <span class="o">:=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="nx">T</span><span class="p">)</span> <span class="nx">T</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">i</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="nx">j</span> <span class="o">*</span><span class="mi">2</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">fn2</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
@@ -875,7 +876,7 @@
 </span></span><span class="line"><span class="cl">    <span class="kt">uint</span> <span class="p">|</span> <span class="kt">uint8</span> <span class="p">|</span> <span class="kt">uint16</span> <span class="p">|</span> <span class="kt">uint32</span> <span class="p">|</span> <span class="kt">uint64</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Slice</span><span class="p">[</span><span class="nx">T</span> <span class="nx">Int</span> <span class="p">|</span> <span class="nx">Uint</span><span class="p">]</span> <span class="p">[]</span><span class="nx">T</span>	
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Slice</span><span class="p">[</span><span class="nx">T</span> <span class="nx">Int</span> <span class="p">|</span> <span class="nx">Uint</span><span class="p">]</span> <span class="p">[]</span><span class="nx">T</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>在接口中也能直接组合其他接口，如下</p>
@@ -1017,7 +1018,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">IntUint</span> <span class="kd">interface</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="p">|</span> <span class="kt">int8</span><span class="p">|</span> <span class="kt">int16</span> <span class="p">|</span> <span class="kt">int32</span> <span class="p">|</span> <span class="kt">int64</span> <span class="p">|</span> <span class="kt">uint</span> <span class="p">|</span> <span class="kt">uint8</span> <span class="p">|</span> <span class="kt">uint16</span><span class="p">|</span> <span class="kt">uint32</span> <span class="p">|</span> <span class="kt">uint64</span> 
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="p">|</span> <span class="kt">int8</span><span class="p">|</span> <span class="kt">int16</span> <span class="p">|</span> <span class="kt">int32</span> <span class="p">|</span> <span class="kt">int64</span> <span class="p">|</span> <span class="kt">uint</span> <span class="p">|</span> <span class="kt">uint8</span> <span class="p">|</span> <span class="kt">uint16</span><span class="p">|</span> <span class="kt">uint32</span> <span class="p">|</span> <span class="kt">uint64</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -1045,7 +1046,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">AllInt</span> <span class="kd">interface</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">     <span class="kt">int</span> <span class="p">|</span> <span class="kt">int8</span><span class="p">|</span> <span class="kt">int16</span> <span class="p">|</span> <span class="kt">int32</span> <span class="p">|</span> <span class="kt">int64</span> <span class="p">|</span> <span class="kt">uint</span> <span class="p">|</span> <span class="kt">uint8</span> <span class="p">|</span> <span class="kt">uint16</span><span class="p">|</span> <span class="kt">uint32</span> <span class="p">|</span> <span class="kt">uint64</span> 
+</span></span><span class="line"><span class="cl">     <span class="kt">int</span> <span class="p">|</span> <span class="kt">int8</span><span class="p">|</span> <span class="kt">int16</span> <span class="p">|</span> <span class="kt">int32</span> <span class="p">|</span> <span class="kt">int64</span> <span class="p">|</span> <span class="kt">uint</span> <span class="p">|</span> <span class="kt">uint8</span> <span class="p">|</span> <span class="kt">uint16</span><span class="p">|</span> <span class="kt">uint32</span> <span class="p">|</span> <span class="kt">uint64</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Uint</span> <span class="kd">interface</span> <span class="p">{</span>
@@ -1243,7 +1244,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">ReadWriter</span> <span class="kd">interface</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="err">~</span><span class="kt">string</span> <span class="p">|</span> <span class="err">~</span><span class="p">[]</span><span class="kt">rune</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">Read</span><span class="p">(</span><span class="nx">p</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">Write</span><span class="p">(</span><span class="nx">p</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1361,7 +1362,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">ReadWriter</span> <span class="kd">interface</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="err">~</span><span class="kt">string</span> <span class="p">|</span> <span class="err">~</span><span class="p">[]</span><span class="kt">rune</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">Read</span><span class="p">(</span><span class="nx">p</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">Write</span><span class="p">(</span><span class="nx">p</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1409,7 +1410,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">DataProcessor2</span><span class="p">[</span><span class="nx">T</span> <span class="nx">any</span><span class="p">]</span> <span class="kd">interface</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="p">|</span> <span class="err">~</span><span class="kd">struct</span><span class="p">{</span> <span class="nx">Data</span> <span class="nx">any</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">Process</span><span class="p">(</span><span class="nx">data</span> <span class="nx">T</span><span class="p">)</span> <span class="p">(</span><span class="nx">newData</span> <span class="nx">T</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">Save</span><span class="p">(</span><span class="nx">data</span> <span class="nx">T</span><span class="p">)</span> <span class="kt">error</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1492,7 +1493,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">DataProcessor2</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span> <span class="kd">interface</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="p">|</span> <span class="err">~</span><span class="kd">struct</span><span class="p">{</span> <span class="nx">Data</span> <span class="nx">any</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">Process</span><span class="p">(</span><span class="nx">data</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="nx">newData</span> <span class="kt">string</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">Save</span><span class="p">(</span><span class="nx">data</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">error</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1577,14 +1578,14 @@
 </span></span><span class="line"><span class="cl"><span class="c1">// right，实例化后的DataProcessor2可以用于泛型的类型约束
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">stringProcessor</span> <span class="kd">interface</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">DataProcessor2</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">PrintString</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// error，带方法的一般接口不能作为类型并集的成员
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">StringProcessor</span> <span class="kd">interface</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">DataProcessor2</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span> <span class="p">|</span> <span class="nx">DataProcessor2</span><span class="p">[[]</span><span class="kt">byte</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nf">PrintString</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
@@ -1804,6 +1805,10 @@
 <blockquote>
 <p>泛型并不取代1.18之前利用接口+反射的方式实现的动态类型，泛型的适用场景是：当你需要对不同类型书写相同逻辑时，适用泛型是简化代码的最好办法（比如写一些数据结构，堆、栈、链表等）</p>
 </blockquote>
+<h2 id="参考">参考</h2>
+<ul>
+<li>[1] <a href="https://segmentfault.com/a/1190000041634906">Go 1.18 泛型全面讲解：一篇讲清泛型的全部</a></li>
+</ul>
 
     </div>
 
