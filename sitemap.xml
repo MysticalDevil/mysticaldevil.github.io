@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/categories/notes/</loc>
+    <lastmod>2023-01-23T19:50:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <lastmod>2023-01-23T19:50:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -9,14 +16,28 @@
   </url>
   
   <url>
-    <loc>/categories/hugo/</loc>
+    <loc>/tags/generic/</loc>
     <lastmod>2023-01-23T19:50:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/my-first-post/</loc>
+    <loc>/tags/go/</loc>
+    <lastmod>2023-01-23T19:50:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/go/</loc>
+    <lastmod>2023-01-23T19:50:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/golang-generic/</loc>
     <lastmod>2023-01-23T19:50:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -37,14 +58,22 @@
   </url>
   
   <url>
-    <loc>/about/</loc>
-    <lastmod>2021-11-21T13:00:51+08:00</lastmod>
+    <loc>/categories/programming/</loc>
+    <lastmod>2023-01-23T19:50:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2023-01-23T19:50:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2021-11-21T13:00:51+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

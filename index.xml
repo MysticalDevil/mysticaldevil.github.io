@@ -8,12 +8,12 @@
     <language>zh-cn</language>
     <lastBuildDate>Mon, 23 Jan 2023 19:50:59 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>/post/my-first-post/</link>
+      <title>Go 新特性 -- 泛型</title>
+      <link>/post/golang-generic/</link>
       <pubDate>Mon, 23 Jan 2023 19:50:59 +0800</pubDate>
       
-      <guid>/post/my-first-post/</guid>
-      <description>这是我的第一篇博客 这是我的第一篇博客 个人网站链接</description>
+      <guid>/post/golang-generic/</guid>
+      <description>序言 2022年3月15日，争议非常大但同时也备受期待的泛型终于伴随着 Go 1.18 发布了。设计者之前还说为了 Go 语言的简洁，不会加入泛型🙄 为什么要引入泛</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Sun, 21 Nov 2021 13:00:51 +0800</pubDate>
       
       <guid>/about/</guid>
-      <description>这里是内容</description>
+      <description>关于 Mystical Devil Hi，我是 DEvil😈，一名大四的 CS 本科生，一个纯粹的人，一个热爱折腾的人，一个没有脱离低级趣味的人。目前正在准备毕业设计和春招 水平</description>
     </item>
     
   </channel>
