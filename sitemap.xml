@@ -2,14 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/categories/notes/</loc>
+    <loc>/categories/</loc>
     <lastmod>2023-01-23T19:50:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/tags/css/</loc>
+    <lastmod>2023-01-23T19:50:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/css/</loc>
+    <lastmod>2023-01-23T19:50:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/post/css-layout/</loc>
     <lastmod>2023-01-23T19:50:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -51,6 +65,13 @@
   </url>
   
   <url>
+    <loc>/tags/notes/</loc>
+    <lastmod>2023-01-23T19:50:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
     <lastmod>2023-01-23T19:50:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -58,7 +79,7 @@
   </url>
   
   <url>
-    <loc>/categories/programming/</loc>
+    <loc>/tags/programming/</loc>
     <lastmod>2023-01-23T19:50:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

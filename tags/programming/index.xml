@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on MysticalDevil&#39;s Blog</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on MysticalDevil&#39;s Blog</description>
+    <title>Programming on MysticalDevil&#39;s Blog</title>
+    <link>/tags/programming/</link>
+    <description>Recent content in Programming on MysticalDevil&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 23 Jan 2023 19:50:59 +0800</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Jan 2023 19:50:59 +0800</lastBuildDate><atom:link href="/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CSS 学习笔记 -- 布局概念 盒模型</title>
       <link>/post/css-layout/</link>

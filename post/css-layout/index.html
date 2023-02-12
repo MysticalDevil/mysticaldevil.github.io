@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>CSS 学习笔记 -- 布局概念 盒模型 - MysticalDevil&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="MysticalDevil" /><meta name="description" content="CSS 布局概念 文档流（normal flow） 网页是一个多层的结构，一层摞一层的，可以通过 CSS 分别为每一层来设置样式，作为用户来讲只能看到最上面的一" /><meta name="keywords" content="Hugo, theme, even, blog, mystical, devil, mysticaldevil, programming" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
+
+
+<link rel="canonical" href="/post/css-layout/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="CSS 学习笔记 -- 布局概念 盒模型" />
+<meta property="og:description" content="CSS 布局概念 文档流（normal flow） 网页是一个多层的结构，一层摞一层的，可以通过 CSS 分别为每一层来设置样式，作为用户来讲只能看到最上面的一" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/css-layout/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-01-23T19:50:59+08:00" />
+<meta property="article:modified_time" content="2023-01-23T19:50:59+08:00" />
+<meta itemprop="name" content="CSS 学习笔记 -- 布局概念 盒模型">
+<meta itemprop="description" content="CSS 布局概念 文档流（normal flow） 网页是一个多层的结构，一层摞一层的，可以通过 CSS 分别为每一层来设置样式，作为用户来讲只能看到最上面的一"><meta itemprop="datePublished" content="2023-01-23T19:50:59+08:00" />
+<meta itemprop="dateModified" content="2023-01-23T19:50:59+08:00" />
+<meta itemprop="wordCount" content="1955">
+<meta itemprop="keywords" content="CSS,Notes,Programming," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CSS 学习笔记 -- 布局概念 盒模型"/>
+<meta name="twitter:description" content="CSS 布局概念 文档流（normal flow） 网页是一个多层的结构，一层摞一层的，可以通过 CSS 分别为每一层来设置样式，作为用户来讲只能看到最上面的一"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">DEvil</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">DEvil</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">CSS 学习笔记 -- 布局概念 盒模型</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-01-23 </span>
+        <div class="post-category">
+            <a href="/categories/css/"> CSS </a>
+            </div>
+          <span class="more-meta"> 约 1955 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#css-布局概念">CSS 布局概念</a>
+          <ul>
+            <li><a href="#文档流normal-flow">文档流（normal flow）</a></li>
+            <li><a href="#盒模型">盒模型</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="css-布局概念">CSS 布局概念</h2>
+<h3 id="文档流normal-flow">文档流（normal flow）</h3>
+<p>网页是一个多层的结构，一层摞一层的，可以通过 CSS 分别为每一层来设置样式，作为用户来讲只能看到最上面的一层，这些层中的，最底下的一层被称作文档流。我们所创建的元素，默认都在文档流中</p>
+<p>元素主要有两个状态：</p>
+<ul>
+<li>在文档流中</li>
+<li>不在文档流中（脱离文档流）</li>
+</ul>
+<h4 id="元素在文档流中的特点">元素在文档流中的特点</h4>
+<h5 id="块元素">块元素</h5>
+<ul>
+<li>块元素会在页面中独占一行</li>
+<li>默认宽度撑满父元素</li>
+<li>默认高度被子元素撑开</li>
+</ul>
+<h5 id="行内元素">行内元素</h5>
+<ul>
+<li>行内元素不会独占一行，自左向右水平排列</li>
+<li>一行中不能容纳下所有行内元素，则会换行</li>
+<li>默认宽度和高度都是被内容撑开</li>
+</ul>
+<h3 id="盒模型">盒模型</h3>
+<p>CSS 将页面中的所有元素都设为了一个矩形的盒子。将元素设置为矩形后，对页面的布局就变为将不同的盒子摆放到不同的位置</p>
+<p>每一个盒子都由以下部分组成：</p>
+<ul>
+<li>
+<p>内容区（content），元素中的所有子元素和文本内容都在内容区中排列，其大小由 width 和 height 两个属性来决定，width 和 height 定义的是内容区的大小</p>
+</li>
+<li>
+<p>边框（border），边框属于盒子边缘，出了边框属于盒子外部。设置边框至少需要三个样式：宽度、颜色、风格</p>
+<p>边框大小会影响盒子大小</p>
+<p><code>border-width</code> 一般情况下默认是 3 px，四个值的顺序为上右下左，三个值的顺序为上 左右 下，两个值为上下 左右</p>
+<p><code>border-color</code> 和 <code>border-style</code> 规则同上</p>
+<p><code>border-color</code> 默认值为 <code>color</code> 的值</p>
+<p>其上属性也可以用 <code>border</code> 或者 <code>border-xxx</code> 直接定义，两者为简写属性</p>
+</li>
+<li>
+<p>内边距（padding），内容区和边框的距离</p>
+<p>内边距设置忽影响盒子大小，背景颜色会延伸到内边距上</p>
+<p><strong>一个盒子的可见框大小 = 内容区 + 内边距 + 边框</strong></p>
+</li>
+<li>
+<p>外边距（margin），盒子与其他盒子的间距</p>
+<p>不会影响盒子可见框的大小，但是会影响盒子位置和实际占用空间大小</p>
+<p>默认情况下，设置了左边和上边的外边距会移动元素自身，设置下边和右边会移动其他元素</p>
+<p><code>margin-bottom</code> 设置正值，其下元素会向下移动</p>
+<p><code>margin-right</code> 默认情况下，不会产生任何效果</p>
+<p><code>margin</code> 可以设置负值，元素会向相反方向移动</p>
+</li>
+</ul>
+<p><img src="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model/box-model.png" alt="box model"></p>
+<h4 id="元素水平方向布局">元素水平方向布局</h4>
+<p>元素在其父元素中水平方向位置由以下几个属性共同决定</p>
+<ul>
+<li><code>margin-left/right</code></li>
+<li><code>border-left/right</code></li>
+<li><code>padding-left/right</code></li>
+<li><code>width</code></li>
+</ul>
+<p>一个元素在其父元素中，水平布局必须满足：子元素的左右外边距、边框、内边距的和 = 父元素内容区的宽度</p>
+<p>以上等式必须满足，如果相加结果使等式不成立，则称为过度约束，浏览器会自动调整等</p>
+<p>这些值中有三个值可以设置为 auto：<code>width</code> <code>margin-left</code> <code>margin-right</code>，<code>width</code> 的值默认为 auto</p>
+<ul>
+<li>
+<p><strong>如果所有值中没有 auto 的情况，则浏览器会调整 <code>margin-right</code>的值以使等式满足</strong></p>
+</li>
+<li>
+<p><strong>如果某个值为 auto 则会自动调整设置为 auto 的值，来使等式成立</strong></p>
+</li>
+<li>
+<p><strong>如果将 <code>width</code> 和 一个 <code>margin</code> 设置为 auto，则宽度会调整到最大，设置为 auto 的外边距会自动为 0</strong></p>
+</li>
+<li>
+<p><strong>如果将三个值都设置为 auto，则宽度会调整为最大，外边距会设置为 0</strong></p>
+</li>
+<li>
+<p><strong>如果将两个外边距设置为 auto，宽度固定，则会将外边距设置为相同的值</strong>。经常利用该特点来使子元素在父元素中水平居中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">box</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h4 id="元素垂直方向布局">元素垂直方向布局</h4>
+<p>默认情况下，父元素的高度被内容撑开</p>
+<p>子元素在父元素内容区排列。如果子元素的大小超过父元素，则子元素会从父元素中溢出</p>
+<p>使用 <code>overflow</code> 属性来设置父元素来处理溢出的子元素，可选值如下（<code>overflow-x</code>，<code>overflow-y</code>）</p>
+<ul>
+<li><code>visiable</code> 默认值，子元素溢出，会在父元素外部显示</li>
+<li><code>hidden</code> 溢出元素将会被裁剪，不会显示</li>
+<li><code>scroll</code> 生成两个滚动条来查看完整内容</li>
+<li><code>auto</code> 根据需要生成滚动条</li>
+</ul>
+<h4 id="外边距折叠">外边距折叠</h4>
+<p>有如下两个样式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">box1</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="kc">cyan</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">box2</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="kc">orange</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-top</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>理论上两个<code>div</code>的间距应该为 200px，但实际上为 100px</p>
+<p>该问题被叫做外边距折叠，即垂直方向的相邻的外边距会发生折叠（重叠）现象</p>
+<ul>
+<li>
+<p><strong>兄弟元素</strong>间的相邻垂直外边距，两者为正值会取两者之间的较大值；一正一负取两者的和；全负值两者之间取绝对值较大的</p>
+<p>兄弟元素间的外边距折叠对开发是有利的，一般不需要处理</p>
+</li>
+<li>
+<p><strong>父子元素</strong>中，如果子元素设置了<code>margin-top</code>，子元素和父元素位置会同时改变，不会单独改变子元素位置；即子元素的（上外边距）会传递给父元素</p>
+<p>父子元素的外边距折叠会影响到页面的整体布局</p>
+<p>临时解决方式：不用外边距或者不让两者相邻</p>
+</li>
+</ul>
+<h4 id="行内元素的盒模型">行内元素的盒模型</h4>
+<ul>
+<li>不支持设置宽度和高度，内容区大小由内容决定</li>
+<li>支持设置 <code>padding</code>，垂直方向的 <code>padding</code> 不会影响页面的布局</li>
+<li><code>border</code> ，<code>margin</code>同上</li>
+</ul>
+<p>可以使用 <code>display</code> 属性来设置元素显示的类型，<strong>display</strong> 的可选值如下</p>
+<ul>
+<li><code>inline</code> 将元素设置为行内元素</li>
+<li><code>block</code> 设置为块元素</li>
+<li><code>inline-block</code>设置为行内块元素，既可以设置宽度高度，又不会独占一行</li>
+<li><code>table</code> 设置为表格</li>
+<li><code>none</code> 元素不在页面中显示（隐藏元素）</li>
+<li>还有其他可选值，之后会学习</li>
+</ul>
+<p><code>visibility</code> 用来设置元素的显示状态，<strong>visibility</strong> 可选值如下</p>
+<ul>
+<li><code>visible</code> 默认值，元素在页面正常显示</li>
+<li><code>hidden</code> 元素在页面隐藏，但是依然占据页面位置</li>
+</ul>
+<h4 id="浏览器的默认样式">浏览器的默认样式</h4>
+<p>通常情况下，浏览器都会为元素设置一些默认样式</p>
+<p>默认样式会影响到页面的布局。开发时会去除掉浏览器的默认样式（PC 端的页面）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="o">*</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nt">ul</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c">/*去除项目符号*/</span>
+</span></span><span class="line"><span class="cl">    <span class="k">list-style</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以使用 <a href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"><code>normalize.css</code></a> 和 <a href="https://meyerweb.com/eric/tools/css/reset/"><code>reset.css</code></a> 来清除默认样式</p>
+<p><code>normalize.css</code> 对默认样式进行了统一</p>
+<p><code>reset.css</code> 直接去除了所有默认样式</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">MysticalDevil</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-01-23
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat-reward-qrcode.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay-reward-qrcode.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/css/">CSS</a>
+          <a href="/tags/notes/">Notes</a>
+          <a href="/tags/programming/">Programming</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/golang-generic/">
+            <span class="next-text nav-default">Go 新特性 -- 泛型</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="MysticalDevil/mysticaldevil.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="jinpeng7981@outlook.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/15772868/mystical-c" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://github.com/MysticalDevil" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10997055?spm_id_from=333.1007.0.0" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>MysticalDevil</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

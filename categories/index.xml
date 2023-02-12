@@ -8,11 +8,11 @@
     <language>zh-cn</language>
     <lastBuildDate>Mon, 23 Jan 2023 19:50:59 +0800</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>“Notes&#34;</title>
-      <link>/categories/notes/</link>
+      <title>CSS</title>
+      <link>/categories/css/</link>
       <pubDate>Mon, 23 Jan 2023 19:50:59 +0800</pubDate>
       
-      <guid>/categories/notes/</guid>
+      <guid>/categories/css/</guid>
       <description></description>
     </item>
     
@@ -22,15 +22,6 @@
       <pubDate>Mon, 23 Jan 2023 19:50:59 +0800</pubDate>
       
       <guid>/categories/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
-      <link>/categories/programming/</link>
-      <pubDate>Mon, 23 Jan 2023 19:50:59 +0800</pubDate>
-      
-      <guid>/categories/programming/</guid>
       <description></description>
     </item>
     
