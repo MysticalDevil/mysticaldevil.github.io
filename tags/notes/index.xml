@@ -8,12 +8,12 @@
     <language>zh-cn</language>
     <lastBuildDate>Mon, 23 Jan 2023 19:50:59 +0800</lastBuildDate><atom:link href="/tags/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CSS 学习笔记 -- 布局概念 盒模型</title>
+      <title>CSS 学习笔记 -- 盒模型</title>
       <link>/post/css-layout/</link>
       <pubDate>Mon, 23 Jan 2023 19:50:59 +0800</pubDate>
       
       <guid>/post/css-layout/</guid>
-      <description>CSS 布局概念 文档流（normal flow） 网页是一个多层的结构，一层摞一层的，可以通过 CSS 分别为每一层来设置样式，作为用户来讲只能看到最上面的一</description>
+      <description>CSS 盒模型 文档流（normal flow） 网页是一个多层的结构，一层摞一层的，可以通过 CSS 分别为每一层来设置样式，作为用户来讲只能看到最上面的一层</description>
     </item>
     
     <item>
