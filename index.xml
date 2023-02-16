@@ -6,11 +6,20 @@
     <description>Recent content on MysticalDevil&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 23 Jan 2023 19:50:59 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Feb 2023 21:59:40 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS 学习笔记 -- 浮动</title>
+      <link>/post/css-float/</link>
+      <pubDate>Tue, 14 Feb 2023 21:59:40 +0800</pubDate>
+      
+      <guid>/post/css-float/</guid>
+      <description>简介 通过浮动可以使一个元素向其父元素的左侧或右侧移动，使用 float 来设置元素的浮动，可选值如下 none 默认值，元素不浮动 left 元素像左浮动 right 元素向右浮动 设置</description>
+    </item>
+    
     <item>
       <title>CSS 学习笔记 -- 盒模型</title>
       <link>/post/css-layout/</link>
-      <pubDate>Mon, 23 Jan 2023 19:50:59 +0800</pubDate>
+      <pubDate>Fri, 10 Feb 2023 19:50:59 +0800</pubDate>
       
       <guid>/post/css-layout/</guid>
       <description>CSS 盒模型 文档流（normal flow） 网页是一个多层的结构，一层摞一层的，可以通过 CSS 分别为每一层来设置样式，作为用户来讲只能看到最上面的一层</description>
