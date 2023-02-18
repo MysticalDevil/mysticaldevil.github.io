@@ -6,20 +6,20 @@
     <description>Recent content in Tags on MysticalDevil&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 14 Feb 2023 21:59:40 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Feb 2023 17:15:27 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CSS</title>
-      <link>/tags/css/</link>
-      <pubDate>Tue, 14 Feb 2023 21:59:40 +0800</pubDate>
+      <title>Algorithm</title>
+      <link>/tags/algorithm/</link>
+      <pubDate>Sat, 18 Feb 2023 17:15:27 +0800</pubDate>
       
-      <guid>/tags/css/</guid>
+      <guid>/tags/algorithm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Notes</title>
       <link>/tags/notes/</link>
-      <pubDate>Tue, 14 Feb 2023 21:59:40 +0800</pubDate>
+      <pubDate>Sat, 18 Feb 2023 17:15:27 +0800</pubDate>
       
       <guid>/tags/notes/</guid>
       <description></description>
@@ -28,9 +28,18 @@
     <item>
       <title>Programming</title>
       <link>/tags/programming/</link>
-      <pubDate>Tue, 14 Feb 2023 21:59:40 +0800</pubDate>
+      <pubDate>Sat, 18 Feb 2023 17:15:27 +0800</pubDate>
       
       <guid>/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>/tags/css/</link>
+      <pubDate>Thu, 16 Feb 2023 23:59:45 +0800</pubDate>
+      
+      <guid>/tags/css/</guid>
       <description></description>
     </item>
     
